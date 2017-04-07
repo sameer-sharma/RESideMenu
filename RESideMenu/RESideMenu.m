@@ -103,6 +103,8 @@
     _bouncesHorizontally = YES;
     
     _panGestureEnabled = YES;
+    _panGestureLeftEnabled = YES;
+    _panGestureRightEnabled = YES;
     _panFromEdge = YES;
     _panMinimumOpenThreshold = 60.0;
     
@@ -251,6 +253,11 @@
 
 - (void)presentMenuViewContainerWithMenuViewController:(UIViewController *)menuViewController
 {
+    if ([self.delegate conformsToProtocol:@protocol(RESideMenuDelegate)] && [self.delegate respondsToSelector:@selector(sideMenu:shouldShowMenuViewController:)]){
+        if(! [self.delegate sideMenu:self shouldShowMenuViewController:self.leftMenuViewController]){
+            return;
+        }
+    }
     self.menuViewContainer.transform = CGAffineTransformIdentity;
     if (self.scaleBackgroundImageView) {
         self.backgroundImageView.transform = CGAffineTransformIdentity;
@@ -537,11 +544,13 @@
   
     if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !self.visible) {
         CGPoint point = [touch locationInView:gestureRecognizer.view];
-        if (point.x < 20.0 || point.x > self.view.frame.size.width - 20.0) {
+        if(self.panGestureLeftEnabled && point.x < 20.0) {
             return YES;
-        } else {
-            return NO;
+        } else if(self.panGestureRightEnabled && point.x > self.view.frame.size.width - 20.0) {
+            return YES;
         }
+        
+        return NO;
     }
     
     return YES;
@@ -560,6 +569,18 @@
     }
     
     CGPoint point = [recognizer translationInView:self.view];
+    
+    if ([self.delegate conformsToProtocol:@protocol(RESideMenuDelegate)] && [self.delegate respondsToSelector:@selector(sideMenu:shouldShowMenuViewController:)]){
+        if (point.x > 0) {
+            if(! [self.delegate sideMenu:self shouldShowMenuViewController:self.leftMenuViewController]){
+                return;
+            }
+        } else {
+            if(! [self.delegate sideMenu:self shouldShowMenuViewController:self.rightMenuViewController]){
+                return;
+            }
+        }
+    }
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self updateContentViewShadow];
@@ -757,6 +778,10 @@
 
 - (void)setRightMenuViewController:(UIViewController *)rightMenuViewController
 {
+    if (!rightMenuViewController) {
+        _rightMenuViewController = nil;
+        return;
+    }
     if (!_rightMenuViewController) {
         _rightMenuViewController = rightMenuViewController;
         return;

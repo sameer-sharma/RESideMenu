@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D08DADF1B0C72A100EA8198 /* RESideMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D08DADE1B0C72A100EA8198 /* RESideMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D08DAE51B0C72A100EA8198 /* RESideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D08DAD91B0C72A100EA8198 /* RESideMenu.framework */; };
-		9D08DAEC1B0C72A100EA8198 /* RESideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08DAEB1B0C72A100EA8198 /* RESideMenuTests.m */; };
 		9D08DAFA1B0C735600EA8198 /* RECommonFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D08DAF51B0C735600EA8198 /* RECommonFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D08DAFB1B0C735600EA8198 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08DAF61B0C735600EA8198 /* RECommonFunctions.m */; };
 		9D08DAFC1B0C735600EA8198 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08DAF71B0C735600EA8198 /* RESideMenu.m */; };
@@ -17,21 +15,10 @@
 		9D08DAFE1B0C735600EA8198 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08DAF91B0C735600EA8198 /* UIViewController+RESideMenu.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9D08DAE61B0C72A100EA8198 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D08DAD01B0C72A100EA8198 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D08DAD81B0C72A100EA8198;
-			remoteInfo = RESideMenu;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		9D08DAD91B0C72A100EA8198 /* RESideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RESideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D08DADD1B0C72A100EA8198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D08DADE1B0C72A100EA8198 /* RESideMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
-		9D08DAE41B0C72A100EA8198 /* RESideMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RESideMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D08DAEA1B0C72A100EA8198 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D08DAEB1B0C72A100EA8198 /* RESideMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RESideMenuTests.m; sourceTree = "<group>"; };
 		9D08DAF51B0C735600EA8198 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
@@ -46,14 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D08DAE11B0C72A100EA8198 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D08DAE51B0C72A100EA8198 /* RESideMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				9D08DAD91B0C72A100EA8198 /* RESideMenu.framework */,
-				9D08DAE41B0C72A100EA8198 /* RESideMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,24 +129,6 @@
 			productReference = 9D08DAD91B0C72A100EA8198 /* RESideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9D08DAE31B0C72A100EA8198 /* RESideMenuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D08DAF21B0C72A100EA8198 /* Build configuration list for PBXNativeTarget "RESideMenuTests" */;
-			buildPhases = (
-				9D08DAE01B0C72A100EA8198 /* Sources */,
-				9D08DAE11B0C72A100EA8198 /* Frameworks */,
-				9D08DAE21B0C72A100EA8198 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9D08DAE71B0C72A100EA8198 /* PBXTargetDependency */,
-			);
-			name = RESideMenuTests;
-			productName = RESideMenuTests;
-			productReference = 9D08DAE41B0C72A100EA8198 /* RESideMenuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -179,9 +139,6 @@
 				ORGANIZATIONNAME = "Roman Efimov";
 				TargetAttributes = {
 					9D08DAD81B0C72A100EA8198 = {
-						CreatedOnToolsVersion = 6.3.1;
-					};
-					9D08DAE31B0C72A100EA8198 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
@@ -199,20 +156,12 @@
 			projectRoot = "";
 			targets = (
 				9D08DAD81B0C72A100EA8198 /* RESideMenu */,
-				9D08DAE31B0C72A100EA8198 /* RESideMenuTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9D08DAD71B0C72A100EA8198 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D08DAE21B0C72A100EA8198 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,23 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D08DAE01B0C72A100EA8198 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D08DAEC1B0C72A100EA8198 /* RESideMenuTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9D08DAE71B0C72A100EA8198 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D08DAD81B0C72A100EA8198 /* RESideMenu */;
-			targetProxy = 9D08DAE61B0C72A100EA8198 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9D08DAED1B0C72A100EA8198 /* Debug */ = {
@@ -378,30 +311,6 @@
 			};
 			name = Release;
 		};
-		9D08DAF31B0C72A100EA8198 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RESideMenuTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.romaonthego.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		9D08DAF41B0C72A100EA8198 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RESideMenuTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.romaonthego.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -419,15 +328,6 @@
 			buildConfigurations = (
 				9D08DAF01B0C72A100EA8198 /* Debug */,
 				9D08DAF11B0C72A100EA8198 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9D08DAF21B0C72A100EA8198 /* Build configuration list for PBXNativeTarget "RESideMenuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D08DAF31B0C72A100EA8198 /* Debug */,
-				9D08DAF41B0C72A100EA8198 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
